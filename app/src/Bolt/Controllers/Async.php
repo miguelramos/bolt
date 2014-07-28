@@ -387,6 +387,7 @@ class Async implements ControllerProviderInterface
 
         try {
             $list = $filesystem->listContents($path);
+            //var_dump($list);
             $validFolder = true;
         } catch (\Exception $e) {
             $app['session']->getFlashBag()->set('error', __("Folder '%s' could not be found, or is not readable.", array('%s' => $path))); 

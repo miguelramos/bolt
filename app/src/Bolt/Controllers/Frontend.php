@@ -73,6 +73,8 @@ class Frontend
     public static function homepage(Silex\Application $app)
     {
         if ($app['config']->get('general/homepage_template')) {
+            $record = false;
+
             $template = $app['config']->get('general/homepage_template');
             $content = $app['storage']->getContent($app['config']->get('general/homepage'));
 
