@@ -367,7 +367,6 @@ class Async implements ControllerProviderInterface
      */
     public function browse($path, Silex\Application $app, Request $request)
     {
-        
         $filesystem = $app['filesystem']->getManager();
 
         // $key is linked to the fieldname of the original field, so we can
@@ -387,7 +386,7 @@ class Async implements ControllerProviderInterface
 
         try {
             $list = $filesystem->listContents($path);
-            //var_dump($list);
+
             $validFolder = true;
         } catch (\Exception $e) {
             $app['session']->getFlashBag()->set('error', __("Folder '%s' could not be found, or is not readable.", array('%s' => $path))); 
